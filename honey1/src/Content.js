@@ -1,15 +1,20 @@
+import { useState } from 'react';
+
 const Content = () => {
+    const [name, setName] = useState('hana');
+
     const handleNameChange = () => {
         const names = ['hana', 'farah', 'xz'];
         const int = Math.floor(Math.random() * 3);
-        return names[int];
+        setName(names[int]);
     }
 
-    return(
+    return (
         <main>
             <p>
-                Hello {handleNameChange()}!
+                Hello {name}!
             </p>
+            <button onClick={handleNameChange}>click it</button>
         </main>
     )
 }
